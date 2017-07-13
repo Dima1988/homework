@@ -2,6 +2,7 @@ public class AdditionHomeWork {
     public static void main (String[] args) {
 
       convertBinToDec1("10011011");
+      convertBinToDec1("1011001");
     }
 
     public static int convertBinToDec1(String binary) {
@@ -37,5 +38,27 @@ public class AdditionHomeWork {
           aForCycle --;
         }
         return result;
+    }
+
+    public static int convertBinToDec2(String binary) {
+       int result = 0;
+       int a = binary.length();
+
+       char[] ch = binary.toCharArray();
+       int[] b = new int[a];
+       for(int c = 0; c < a; c ++ ) {     // с помощью цикла и метода digit преобразовываем массив char-ов в массив int-ов
+           b[c] = Character.digit(ch[c], 10);
+       }
+
+       for(int d = 0; d < a; d++){
+         if (b[d] == 1 ){
+           result = result * 2 + 1;
+         }
+         else {
+           result = result * 2 + 0;
+         }
+       }
+       return result;
+
     }
 }
